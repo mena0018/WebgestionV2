@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification profil{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/css/profile.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('/css/editProfile.css') }}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    {{ form_start(editProfil) }}
+    <main class="main-content" role="main">
+        <h1>Modification du profil</h1>
+    </main>
+
+    <div class="container">
+        <div id="card-title" class="line">
+            <h2>{{ app.user.firstname }} {{ app.user.lastname }}</h2>
+        </div>
+        <div id="contenu" class="line">
+            <div id="pp">
+                <img src="{{ app.user.gravatar(app.user.mail) }}"  alt=""/>
+            </div>
+            <div class="infos">
+                <div id="col1">
+                    {{ form_row(editProfil.mail) }}
+                    {{ form_row(editProfil.address) }}
+                    {{ form_row(editProfil.city) }}
+                    {{ form_row(editProfil.post_code) }}
+                    {{ form_row(editProfil.firstname) }}
+                </div>
+                <div id="col2">
+                    {{ form_row(editProfil.login) }}
+                    {{ form_row(editProfil.tel) }}
+                    {{ form_row(editProfil.lastname) }}
+                    {{ form_row(editProfil.date_nais) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modif">
+        <a href="{{ path('profile') }}">Retour</a>
+        {{ form_end(editProfil) }}
+    </div>
+
+{% endblock %}

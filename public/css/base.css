@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+:root {
+    --font-size: 1rem;
+    --dark-blue: #1C1939;
+    --lightgrey: #ececec;
+    --background: #ced3e0;
+    --green: #26B81B;
+    --red:  #cb2121;
+    --azur : #528AAE;
+    --indigo-clair: #b9c4ef;
+}
+
+/* Reset */
+* {
+    box-sizing:border-box;
+    outline:none;
+    margin:0;
+    padding:0;
+}
+
+html, body {
+    background-color: var(--background);
+    color: var(--dark-blue);
+    font-family: 'Quicksand', sans-serif;
+    font-size:var(--font-size);
+}
+
+.main-content {
+    margin: 0 auto;
+    padding:1rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(30px, 3vw, 60px);
+    margin: 20px 0;
+    font-weight: 900;
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark-blue);
+}
+
+.alert {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8px;
+    color: var(--lightgrey);
+    opacity: 1;
+    width: 30%;
+    margin:0 auto;
+    border-radius: 10px;
+}
+
+.alert-success {
+    background-color: var(--green) ;
+}
+
+.alert-message {
+    background-color: var(--azur);
+}
+
+.alert-error {
+    background-color:var(--red);
+}
+
+.close:hover{
+    cursor: pointer;
+}
+
+
+/* PAGE D ERREUR */
+.container-erreur {
+    margin: 50px auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.titre-erreur {
+    margin: 100px auto;
+    font-size: 4rem;
+}
+
+.p-erreur {
+    font-size: 2rem;
+}
+
+.tenor-gif-embed {
+    height: 45%;
+    margin: 20px auto;
+}
+
+.retour {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.retour input[type="button"] {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    cursor:pointer;
+
+}

@@ -1,0 +1,60 @@
+.container-note {
+    margin: 10px auto;
+    width: 70%;
+    box-shadow: 1px 1px 5px var(--dark-blue);
+    padding: 20px;
+    background-color: #b2aed0d7;
+    border-radius: 15px;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #CDD2DE;
+    border-radius: 5px;
+    text-indent: 10px;
+    margin: 10px 0;
+    padding: 5px;
+    text-align: center;
+}
+
+.line:hover {
+    background-color: var(--indigo-clair);
+}
+
+.line:first-child {
+    background-color: #cdd2de9c;
+    text-decoration: solid;
+    padding: 10px;
+    font-size: clamp(16px, 3vw, 1.8rem);
+}
+
+.line:last-child {
+    padding: 10px 0;
+    background-color: #1C1939;
+    color: #CDD2DE;
+    margin-top: 2.5rem;
+    font-size: clamp(16px, 2.5vw, 1.4rem);
+}
+
+.line > div {
+    width: 33%;
+    font-weight: 900;
+}
+
+#felicitation {
+    font-size: clamp(16px, 2.3vw, 1.2rem);
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#felicitation:hover {
+    background-color: var(--background);
+}
+
+.appreciation > p {
+    font-style: italic;
+}
+

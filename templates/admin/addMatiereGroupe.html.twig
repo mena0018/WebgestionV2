@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WebGestion - Ajout d'une matière à un groupe{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/css/admin.css') }}" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+    <main class="main-content" role="main">
+        <h1>Page d'ajout de matière(s) pour un groupe</h1>
+    </main>
+
+    <div class="container-groupe">
+        <div class="contenu">
+            {{ form_start(addMatiereGroupe) }}
+            {{ form_row(addMatiereGroupe.matiere) }}
+            {{ form_row(addMatiereGroupe.groupe) }}
+        </div>
+        {{ form_end(addMatiereGroupe) }}
+    </div>
+{% endblock %}

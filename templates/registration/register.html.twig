@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WebGestion - Inscription{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/css/register.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('/css/form.css') }}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+
+
+<main class="main-content" role="main">
+    <h1>S'inscrire</h1>
+</main>
+
+<div class="form-container">
+    {{ form_start(registrationForm) }}
+    <div class="block">
+        {{ form_row(registrationForm.login) }}
+    </div>
+    <div class="line">
+        <div class="in-line">
+            {{ form_row(registrationForm.firstname) }}
+        </div>
+        <div class="in-line">
+            {{ form_row(registrationForm.lastname)  }}
+        </div>
+        <div class="in-line">
+            {{ form_row(registrationForm.groupe)  }}
+        </div>
+    </div>
+    <div class="block">
+        {{ form_row(registrationForm.mail) }}
+        {{ form_row(registrationForm.plainPassword.first)  }}
+        {{ form_row(registrationForm.plainPassword.second) }}
+        {{ form_row(registrationForm.address) }}
+    </div>
+    <div class="line">
+        <div class="in-line">
+            {{ form_row(registrationForm.city) }}
+        </div>
+        <div class="in-line">
+            {{ form_row(registrationForm.post_code)  }}
+        </div>
+    </div>
+    <div class="line">
+        <div class="in-line">
+            {{ form_row(registrationForm.tel) }}
+        </div>
+        <div class="in-line">
+            {{ form_row(registrationForm.date_nais)  }}
+        </div>
+    </div>
+
+    <button type="submit">Inscription</button>
+
+    <div class="div-separateur">
+        <p class="separateur">OU</p>
+        <a class="inscription" href="/login">Déjà un compte ?</a>
+    </div>
+    {{ form_end(registrationForm) }}
+</div>
+
+{% endblock %}

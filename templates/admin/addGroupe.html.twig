@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WebGestion - Ajout d'un groupe{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/css/admin.css') }}" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+    <main class="main-content" role="main">
+        <h1>Page d'ajout de groupe(s)</h1>
+    </main>
+
+
+    <div class="container-groupe">
+        <div class="contenu">
+            {{ form_start(addGroupe) }}
+            {{ form_row(addGroupe.libelle) }}
+        </div>
+        {{ form_end(addGroupe) }}
+    </div>
+{% endblock %}

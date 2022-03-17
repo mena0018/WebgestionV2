@@ -1,0 +1,15 @@
+{% extends 'base.html.twig '%}
+
+{% block title %} Accès Interdit {% endblock title %}
+
+{% block body %}
+    <h1 class="titre-erreur">Erreur {{ status_code }}: Accès interdit</h1>
+    <div class="container-erreur">
+        <p class="p-erreur">Vous n'avez pas la permission de voir cette page</p>
+        <div class="tenor-gif-embed" data-postid="11535585" data-share-method="host" data-aspect-ratio="1.35326" data-width="30%">
+            <a href="https://tenor.com/view/interdit-gif-11535585">Interdit GIF</a>from
+            <a href="https://tenor.com/search/interdit-gifs">Interdit GIFs</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+{% endblock body %}

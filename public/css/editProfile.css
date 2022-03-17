@@ -1,0 +1,24 @@
+input {
+    font-family: Quicksand, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--dark-blue);
+    background-color:var(--background);
+}
+
+input[type="text"], input[type="email"] {
+    width: 70%;
+}
+
+p {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#col1 > div {
+    margin: 5px;
+}
+
+.infos {
+    margin: 25px 0;
+}

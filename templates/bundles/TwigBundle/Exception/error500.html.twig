@@ -1,0 +1,17 @@
+{% extends 'base.html.twig '%}
+
+{% block title %} Erreur 500 {% endblock title %}
+
+{% block body %}
+    <h1 class="titre-erreur">Erreur {{ status_code }}: Interne au serveur</h1>
+    <div class="container-erreur">
+        <p class="p-erreur">Avez vous bien pensez à activer le VPN avec OpenVPN GUI ?</p>
+        <p class="p-erreur">C'est bien ce que je pensais..</p>
+
+        <div class="tenor-gif-embed" data-postid="14746212" data-share-method="host" data-aspect-ratio="1.77778" data-width="30%">
+            <a href="https://tenor.com/view/sandoz-canu-sandoz-sandozprod-sandoz-ytb-nord-vpn-gif-14746212">Sandoz Canu Sandozprod GIF</a>from
+            <a href="https://tenor.com/search/sandoz+canu-gifs">Sandoz Canu GIFs</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+{% endblock body %}

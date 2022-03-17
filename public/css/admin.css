@@ -1,0 +1,64 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+}
+.container li {
+    margin: 30px;
+    list-style-type: none;
+}
+
+.container li a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.container li a:nth-child(2n) {
+    margin: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* admin/addGroupe */
+.container-groupe {
+    text-align: center;
+    margin: 50px auto;
+}
+
+form div  {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+form div label {
+    font-size: 1.4rem;
+}
+
+form div input, select {
+    background: var(--indigo);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1rem;
+
+}
+
+button[type="submit"] {
+    padding: 10px;
+    font-size: 1.3rem;
+    font-weight:bolder;
+    background: transparent;
+    color: var(--dark-blue);
+    border:none;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    transition: letter-spacing 0.5s ease;
+    margin: 20px 0 0;
+}
+
+button[type="submit"]:hover {
+    letter-spacing: 1px;
+}

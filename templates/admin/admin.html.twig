@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/css/admin.css') }}" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+
+    <main class="main-content" role="main">
+        <h1>Quelle action souhaitez vous réaliser ?</h1>
+    </main>
+
+    <div class="container">
+        <ul>
+            <li> &#x1F449<a href="{{ path("addGroupe") }}">Ajouter un groupe</a></li>
+            <li> &#x1F449<a href="{{ path("addMatiereGroupe") }}">Ajouter une matière à un groupe</a></li>
+            <li> &#x1F449<a href="#">Ajouter un groupe à un élève</a></li>
+        </ul>
+    </div>
+
+{% endblock %}

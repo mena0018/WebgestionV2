@@ -1,0 +1,19 @@
+{% extends 'base.html.twig '%}
+
+{% block title %} Page non trouvée {% endblock title %}
+
+{% block body %}
+    <h1 class="titre-erreur">Erreur {{ status_code }}: Page non trouvée </h1>
+    <div class="container-erreur">
+        <p class="p-erreur">La page que vous cherchez n'a pas été trouvée</p>
+        <p class="p-erreur">Pensez à vérifier l'URL..</p>
+
+        <div class="tenor-gif-embed" data-postid="7878852" data-share-method="host" data-aspect-ratio="1.33871" data-width="30%">
+            <a href="https://tenor.com/view/error404-404-sad-blue-frown-gif-7878852">Erreur GIF</a>from
+            <a href="https://tenor.com/search/error404-gifs">Error404 GIFs</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+    </div>
+
+{% endblock body %}

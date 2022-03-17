@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WebGestion - Ajout de notes de {{ app.user.login }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/css/addNote.css') }}" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+    {{ form_start(noteForm) }}
+
+<main class="main-content" role="main">
+    <h1>Veuillez ajouter une note</h1>
+</main>
+
+    <div class="tableau-add">
+        <table>
+            <tbody>
+            <tr>
+                <td>{{ form_row(noteForm.user) }}</td>
+                <td>{{ form_row(noteForm.matiere) }}</td>
+                <td>{{ form_row(noteForm.valeur) }}</td>
+                <td>{{ form_row(noteForm.coefficient) }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="add-note">
+            {{ form_end(noteForm) }}
+        </div>
+    </div>
+
+
+    <p class="sep">Liste des dernières notes ajoutées</p>
+    <div class="tableau" >
+        <table>
+            <tbody >
+            <tr>
+                <td>Nom Prénom</td>
+                <td>Note</td>
+                <td>Matière</td>
+                <td>Coefficient</td>
+                <td>Supprimer</td>
+            </tr>
+            {% for note in notes %}
+                <tr>
+                    <td>{{ note.user }}</td>
+                    <td>{{ note.valeur }}/20</td>
+                    <td>{{ note.matiere }}</td>
+                    <td>{{ note.coefficient }}</td>
+                    <td><a href="{{ path('deleteNote', {id: note.id}) }}">Supprimer</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

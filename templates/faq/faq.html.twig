@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WebGestion - FAQ{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/css/faq.css') }}" type="text/css"/>
+{% endblock %}
+
+{% block body %}
+
+    <main class="main-content">
+        <h1 class="title">FAQ</h1>
+    </main>
+    <section>
+        <div class="faq">
+            <div class="question">
+                <h3>C'est quoi Webgestion V2 ?</h3>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="reponse">
+                <p>
+                    Webgestion V2 est une application web de gestion de vie scolaire créé en 2022.
+                    Cette application permet à l'heure actuelle d'ajouter une note si on est admin (professeur)
+                    et de consulter ses notes si on est un élève.
+                </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">
+                <h3>Pourquoi V2 ?</h3>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="reponse">
+                <p>
+                   Notre idée initiale était de faire une mise à jour de Webgestion étant donné que l'application initiale devient obsolète.
+                    Le but à terme est que l'application soit utilisé dans plus de 10 000 collèges et lycées en France.
+                </p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">
+                <h3>De quoi ai-je besoin pour utiliser Webgestion</h3>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="reponse">
+                <p>
+                    Une simple connexion à Internet ou un téléphone mobile suffisent pour utiliser Webgestion.
+                    Inscrivez‑vous ici ! Une fois connecté, vous pouvez commencer à utiliser pleinement Webgestion V2.
+                </p>
+            </div>
+        </div>
+    </section>
+    <script src="{{ asset('/js/faq.js') }}"></script>
+
+{% endblock body %}

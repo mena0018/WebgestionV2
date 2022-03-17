@@ -1,0 +1,56 @@
+html, body {
+    background-size:cover;
+    background:
+        linear-gradient(
+                rgba(0, 0, 0, 0.8),
+                rgba(0, 0, 0, 0.8)
+        ),
+        url("../img/fond_homepage.jpg");
+    scroll-behavior: smooth;
+}
+
+/* Chevron */
+.floating-btn {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #dddddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 #dddddd;
+    animation: pulse 1.3s infinite;
+    background: #dddddd;
+}
+
+@keyframes pulse {
+    to {
+        box-shadow: 0 0 0 15px rgb(255, 255, 255, 0.01);
+    }
+}
+
+.floating-btn img {
+    width: 30px; /* Taille de l'image dans le cercle */
+}
+
+.floating-btn:hover{
+    transition: filter .4s ease-in-out;
+    filter: contrast(200%);
+}
+
+.txt-anim {
+    color: #6883f5;
+}
+
+.h1-anim {
+    font-size: 3rem;
+    color: #ececec;
+    text-align: center;
+}
+
+

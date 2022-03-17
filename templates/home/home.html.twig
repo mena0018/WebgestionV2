@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WebGestion - Accueil{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/css/home.css') }}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <h1 class="h1-anim"></h1>
+    {% if not app.user %}
+        <button class="floating-btn">
+            <a href="/login">
+                <img src="{{ asset('/img/chevron.png') }}" alt="Chevron permettant de changer de page" />
+            </a>
+        </button>
+    {% endif %}
+{% endblock body %}

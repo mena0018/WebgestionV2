@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WebGestion - Notes de {{ app.user.login }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/css/noteBulletin.css') }}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+
+<main class="main-content" role="main">
+    <h1>Bulletin de {{ app.user.firstname }} {{ app.user.lastname|capitalize }}</h1>
+</main>
+
+<div class="container-note">
+        <div class="line">
+            <div>
+                <b>Matière</b>
+            </div>
+            <div>
+                <b>Note</b>
+            </div>
+            <div>
+                <b>Coefficient</b>
+            </div>
+        </div>
+    {% set moyenne, coef = 0, 0 %}
+    {% for mat in matiere %}
+        <div class="line">
+            <div>
+                {{ mat.intitule }}
+            </div>
+            <div>
+                {% set total, i = 0, 0 %}
+                {% for note in notesUser %}
+                    {% if (mat.intitule == note.matiere and note.user == app.user) %}
+                        {% set total, i = total + note.valeur * note.coefficient, i + note.coefficient %}
+                    {% endif %}
+                {% endfor %}
+                {% if i != 0 %}
+                    {% set moy = total / i %}
+                {% else %}
+                    {% set moy = 0 %}
+                {% endif %}
+                {{ moy|round(2, 'floor') }}/20
+            </div>
+            <div>
+                {{ mat.coefficient }}
+            </div>
+        </div>
+        {% set moyenne = moyenne + moy * mat.coefficient %}
+        {% if i != 0 %}
+            {% set coef = coef + mat.coefficient %}
+        {% endif %}
+    {% endfor %}
+    <div class="line">
+            <div>
+                <b>Moyenne Générale</b>
+            </div>
+            <div>
+                {% if coef != 0 %}
+                    {% set MoyGen = moyenne / coef %}
+                {% else %}
+                    {% set MoyGen = moyenne / 1 %}
+                {% endif %}
+                {{ MoyGen|round(2, 'floor') }}/20
+            </div>
+            <div>
+                <b>/////</b>
+            </div>
+    </div>
+</div>
+    <div class="line" id="felicitation">
+        <div>
+            <b>Appréciations</b>
+        </div>
+        <div class="appreciation">
+            {% if MoyGen < 10 %}
+                <p> Vous devez faire mieux. </p>
+            {% elseif MoyGen < 12 %}
+                <p> Vous pouvez faire mieux. </p>
+            {% elseif MoyGen < 14 %}
+                <p> Bien. </p>
+            {% elseif MoyGen < 16 %}
+                <p> Très bien. </p>
+            {% else %}
+                <p> Félicitations du jury. </p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
