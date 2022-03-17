@@ -3,27 +3,16 @@
 * La première fois : 
 
 ```bash
-git clone https://iut-info.univ-reims.fr/gitlab/mena0018/webgestion.git
+git clone https://github.com/mena0018/WebgestionV2.git
 cd webgestion/
-git branch tonPrenom 
-git switch tonPrenom
 c/c le .env en .env.local
 composer install
 composer start
 http://localhost:8000/
-git push -u origin tonPrenom
 ```
+# Page d'acceuil 
+<img width="1440" alt="Capture d’écran 2022-03-17 à 16 59 47" src="https://user-images.githubusercontent.com/89834824/158846884-d7730a41-4e37-426a-a4ee-42010bcc32a0.png">
 
-* Les autres fois : 
+# Plus d'informations sur ce projet
 
-```bash
-cd webgestion/
-git switch master
-git pull
-composer install
-git switch tonPrenom
-git merge master
-composer start
-http://localhost:8000/
-git push
-```
+<img width="1440" alt="Capture d’écran 2022-03-17 à 17 01 37" src="https://user-images.githubusercontent.com/89834824/158847004-02a5c07d-49f3-4b4a-b5af-d7b675b1e5c3.png">
