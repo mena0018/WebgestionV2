@@ -1,7 +1,80 @@
-{% extends 'base.html.twig '%}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Page non trouvée..{% endblock %}</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <link rel="stylesheet" href="{{ asset('/css/base.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('/css/side-navbar.css') }}" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+{% if app.user %}
+    <nav class="side-navbar">
+        <ul class="side-navbar-menu">
+            <li class="side-navbar-item logo">
+                <a href="/" class="side-navbar-link">
+                    <span class="side-navbar-title">Webgestion</span>
+                    <i class="fas fa-chevron-right side-navbar-icon"></i>
+                </a>
+            </li>
+            {% if app.user.administrateur %}
+                <li class="side-navbar-item">
+                    <a href="{{ path('addNote') }}" class="side-navbar-link">
+                        <i class="fas fa-notes-medical side-navbar-icon"></i>
+                        <span class="side-navbar-title">Ajouter Notes</span>
+                    </a>
+                </li>
+                <li class="side-navbar-item">
+                    <a href="{{ path('admin') }}" class="side-navbar-link">
+                        <i class="fas fa-solid fa-screwdriver-wrench side-navbar-icon"></i>
+                        <span class="side-navbar-title">Administration</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="side-navbar-item">
+                    <a href="{{ path('noteBulletin') }}" class="side-navbar-link">
+                        <i class="fas fa-user-graduate side-navbar-icon"></i>
+                        <span class="side-navbar-title">Notes</span>
+                    </a>
+                </li>
+            {% endif %}
+            <li class="side-navbar-item">
+                <a href="{{ path('profile') }}" class="side-navbar-link">
+                    <i class="fas fa-user side-navbar-icon"></i>
+                    <span class="side-navbar-title">Profil</span>
+                </a>
+            </li>
+            <li class="side-navbar-item">
+                <a href="{{ path('faq') }}" class="side-navbar-link">
+                    <i class="fas fa-question-circle side-navbar-icon"></i>
+                    <span class="side-navbar-title">FAQ</span>
+                </a>
+            </li>
+            <li class="side-navbar-item">
+                <a href="{{ path('app_logout') }}" class="side-navbar-link">
+                    <i class="fas fa-right-from-bracket side-navbar-icon"></i>
+                    <span class="side-navbar-title">Se déconnecter</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+{% endif %}
 
-{% block title %} Page non trouvée {% endblock title %}
+<div class="retour">
+    <input type = "button" value = "Retour"  onclick = "history.go(-1)">
+</div>
 
+
+{% for label,messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ label }}"}>
+            {{ message }}
+            <div class="material-icons close">clear</div>
+        </div>
+    {% endfor %}
+{% endfor %}
 {% block body %}
     <h1 class="titre-erreur">Erreur {{ status_code }}: Page non trouvée </h1>
     <div class="container-erreur">
@@ -15,5 +88,10 @@
         <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
     </div>
-
 {% endblock body %}
+
+<script src="https://kit.fontawesome.com/44e41e0ea2.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+<script src="{{ asset('/js/script.js') }}"></script>
+</body>
+</html>
