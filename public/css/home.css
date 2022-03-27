@@ -1,12 +1,30 @@
-html, body {
-    background-size:cover;
-    background:
-        linear-gradient(
-                rgba(0, 0, 0, 0.8),
-                rgba(0, 0, 0, 0.8)
-        ),
-        url("../img/fond_homepage.jpg");
-    scroll-behavior: smooth;
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+.acceuil {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    center / cover url("../img/fond_homepage.jpg");
+}
+
+.txt-anim {
+    color: var(--indigo);
+}
+
+.h1-anim {
+    width: 80%;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: var(--lightgrey);
+    text-align: center;
+    margin: 0;
 }
 
 /* Chevron */
@@ -18,14 +36,14 @@ html, body {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: 2px solid #dddddd;
+    border: 2px solid var(--grey);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 0 0 0 #dddddd;
+    box-shadow: 0 0 0 0 var(--grey);
     animation: pulse 1.3s infinite;
-    background: #dddddd;
+    background: var(--grey);
 }
 
 @keyframes pulse {
@@ -35,7 +53,7 @@ html, body {
 }
 
 .floating-btn img {
-    width: 30px; /* Taille de l'image dans le cercle */
+    width: 30px;
 }
 
 .floating-btn:hover{
@@ -43,14 +61,7 @@ html, body {
     filter: contrast(200%);
 }
 
-.txt-anim {
-    color: #6883f5;
+/* Pas besoin du bouton retour sur la page d'accueil */
+button {
+    display: none;
 }
-
-.h1-anim {
-    font-size: 3rem;
-    color: #ececec;
-    text-align: center;
-}
-
-

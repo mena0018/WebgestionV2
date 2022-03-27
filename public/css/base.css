@@ -10,6 +10,8 @@
     --red:  #cb2121;
     --azur : #528AAE;
     --indigo-clair: #b9c4ef;
+    --indigo: #6883f5;
+    --grey: #dddddd;
 }
 
 /* Reset */
@@ -101,12 +103,12 @@ a {
     right: 2%;
 }
 
-.retour input[type="button"] {
+.retour button {
     background: transparent;
     border: none;
     font-size: 1.2rem;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     cursor:pointer;
-
+    padding: 0.5rem;
 }

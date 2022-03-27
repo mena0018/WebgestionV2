@@ -10,6 +10,9 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        <div class="retour">
+            <button onclick="history.go(-1)">Retour </button>
+        </div>
         {% if app.user %}
             <nav class="side-navbar">
                 <ul class="side-navbar-menu">
@@ -61,11 +64,6 @@
                 </ul>
             </nav>
         {% endif %}
-
-        <div class="retour">
-            <input type = "button" value = "Retour"  onclick = "history.go(-1)">
-        </div>
-
 
         {% for label,messages in app.flashes %}
             {% for message in messages %}

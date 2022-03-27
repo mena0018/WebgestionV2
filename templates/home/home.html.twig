@@ -7,12 +7,14 @@
 {% endblock %}
 
 {% block body %}
-    <h1 class="h1-anim"></h1>
     {% if not app.user %}
-        <button class="floating-btn">
-            <a href="/login">
-                <img src="{{ asset('/img/chevron.png') }}" alt="Chevron permettant de changer de page" />
-            </a>
-        </button>
+        <div class="acceuil">
+            <h1 class="h1-anim"></h1>
+            <button class="floating-btn">
+                <a href="/login">
+                    <img src="{{ asset('/img/chevron.png') }}" alt="Chevron permettant de changer de page" />
+                </a>
+            </button>
+        </div>
     {% endif %}
 {% endblock body %}
